@@ -7,8 +7,10 @@ public:
 
             if(i % 3 == 0 && i%5 == 0){
                 ans.push_back("FizzBuzz");
+                continue;
             }else if(i%3 == 0 && i%5 != 0){
                 ans.push_back("Fizz");
+                continue;
             }else if(i%3 != 0 && i%5 == 0){
                 ans.push_back("Buzz");
             }else{
