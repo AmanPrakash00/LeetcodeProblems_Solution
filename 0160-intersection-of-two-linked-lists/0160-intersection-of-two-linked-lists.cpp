@@ -11,8 +11,8 @@ public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         unordered_map<ListNode*,int> m;
         while(headA != NULL){
-            int data = headA -> val ;
-            m[headA] = data;
+            // int data = headA -> val ;
+            m[headA] = headA -> val;
             headA = headA -> next;
         }
 
