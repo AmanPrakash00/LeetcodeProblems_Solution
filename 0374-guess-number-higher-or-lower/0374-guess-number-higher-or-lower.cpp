@@ -14,7 +14,7 @@ public:
         int e = n;
 
         while(s<=e){
-
+            //important point if you use (s + e) -> than may be your int out of range 
             int pick = s + (e - s) / 2;
             int ans = guess(pick);
 
