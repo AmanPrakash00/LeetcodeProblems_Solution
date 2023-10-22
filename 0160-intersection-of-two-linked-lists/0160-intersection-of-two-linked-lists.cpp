@@ -18,14 +18,13 @@ public:
         }
 
         temp = headB;
-        ListNode* ans = NULL;
+        
         while( temp != NULL){
             if(m.find(temp) != m.end()){
-                ans = temp;
-                break;
+                return temp;
             }
             temp = temp -> next;
         }
-        return ans;
+        return NULL;
     }
 };
