@@ -15,41 +15,23 @@ public:
         int ans = max(include,exclude);
         return ans;
     }
-    int topdown1(vector<int> &nums,int start,int end,vector<int> &dp1){
+    int topdown(vector<int> &nums,int start,int end,vector<int> &dp){
         if(end < start){
             return 0;
         }
         if(end == start){
             return nums[start];
         }
-        if(dp1[end] != -1){
-            return dp1[end];
+        if(dp[end] != -1){
+            return dp[end];
         }
         //include
-        int include = nums[end] + topdown1(nums,start ,end-2,dp1);
+        int include = nums[end] + topdown(nums,start ,end-2,dp);
         //exclude
-        int exclude = 0 + topdown1(nums,start,end-1,dp1);
+        int exclude = 0 + topdown(nums,start,end-1,dp);
 
-        dp1[end] = max(include,exclude);
-        return dp1[end];
-    }
-    int topdown2(vector<int> &nums,int start,int end,vector<int> &dp2){
-        if(end < start){
-            return 0;
-        }
-        if(end == start){
-            return nums[start];
-        }
-        if(dp2[end] != -1){
-            return dp2[end];
-        }
-        //include
-        int include = nums[end] + topdown2(nums,start ,end-2,dp2);
-        //exclude
-        int exclude = 0 + topdown2(nums,start,end-1,dp2);
-
-        dp2[end] = max(include,exclude);
-        return dp2[end];
+        dp[end] = max(include,exclude);
+        return dp[end];
     }
     int rob(vector<int>& nums) {
         int n = nums.size();
@@ -65,8 +47,8 @@ public:
         vector<int> dp1(n+1,-1);
         vector<int> dp2(n+1,-1);
 
-        int takefirst = topdown1(nums,0,n-2,dp1);
-        int skipfirst = topdown2(nums,1,n-1,dp2);
+        int takefirst = topdown(nums,0,n-2,dp1);
+        int skipfirst = topdown(nums,1,n-1,dp2);
         int ans = max(takefirst,skipfirst);
         return ans;
     }
