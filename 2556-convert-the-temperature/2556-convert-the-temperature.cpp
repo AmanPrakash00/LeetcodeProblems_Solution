@@ -4,9 +4,9 @@ public:
         double fahr = 1.80*celsius + 32.00;
         double kelvin = celsius + 273.15;
 
-        vector<double> ans ;
-        ans.push_back(kelvin);
-        ans.push_back(fahr);
+        vector<double> ans(2) ;
+        ans[0] = kelvin;
+        ans[1] = fahr;
         return ans;
     }
 };
