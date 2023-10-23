@@ -7,15 +7,19 @@ public:
 
             if(str == "++X"){
                 ++x;
+                continue;
             }
             if(str == "X++"){
                 x++;
+                continue;
             }
             if(str == "--X"){
                 --x;
+                continue;
             }
             if(str == "X--"){
                 x--;
+                continue;
             }
         }
 
