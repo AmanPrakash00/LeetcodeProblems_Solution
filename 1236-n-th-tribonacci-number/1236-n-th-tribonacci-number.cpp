@@ -75,6 +75,6 @@ public:
 
         //3. bottom up call
         
-        return bottomup(n);
+        return bottomupSO(n);
     }
 };
