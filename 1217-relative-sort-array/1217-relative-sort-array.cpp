@@ -12,9 +12,11 @@ public:
             }
         }
         sort(arr1.begin(),arr1.end());
-        int index = upper_bound(arr1.begin(),arr1.end(),-1)-arr1.begin();
-        for(int i = index;i< arr1.size();i++){
+        // int index = upper_bound(arr1.begin(),arr1.end(),-1)-arr1.begin();
+        for(int i = 0;i< arr1.size();i++){
+            if(arr1[i] != -1){
                 ans.push_back(arr1[i]);
+            }
         }
 
         return ans;
