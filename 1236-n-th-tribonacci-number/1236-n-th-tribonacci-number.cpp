@@ -27,11 +27,34 @@ public:
         dp[n] = topdown(n-1,dp) + topdown(n-2,dp) + topdown(n-3,dp);
         return dp[n];
     }
-    
+    int bottomup(int n){
+        if(n==0){
+            return 0;
+        }
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        vector<int> dp(n+1,-1);
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 1;
+
+        for(int i=3;i<=n;i++){
+            dp[i] = dp[i-1] + dp[i-2] + dp[i-3];
+        }
+        return dp[n];
+    }
     int tribonacci(int n) {
+        //1. recursive call 
+
         // return recSolve(n);
 
-        vector<int> dp(n+1,-1);
-        return topdown(n,dp);
+        //2. topdown call
+        // vector<int> dp(n+1,-1);
+        // return topdown(n,dp);
+
+        //3. bottom up call
+        
+        return bottomup(n);
     }
 };
