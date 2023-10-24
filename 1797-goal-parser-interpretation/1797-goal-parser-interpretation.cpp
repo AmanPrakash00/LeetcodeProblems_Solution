@@ -9,17 +9,17 @@ public:
             if(check == "G"){
                 output += check;
                 check = "";
-                // continue;
+                continue;
             }
             if(check == "()"){
                 output += "o";
                 check = "";
-                // continue;
+                continue;
             }
             if(check == "(al)"){
                 output += "al";
                 check = "";
-                // continue;
+                continue;
             }
         }
         return output;
