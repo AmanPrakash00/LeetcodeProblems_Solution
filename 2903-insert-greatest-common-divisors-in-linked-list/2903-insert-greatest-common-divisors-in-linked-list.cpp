@@ -20,25 +20,27 @@ public:
        }
        return 1;
     }
-
-    
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
         //one element 
         if(head -> next == NULL){
             return head;
         }
-        
         ListNode* prev = head ;
         ListNode* curr = head -> next;
 
         while(curr != NULL){
+            //step 1 find the greatest
             int data = commonDivisor(prev -> val ,curr -> val);
+            //step 2 creating a node
             ListNode* temp = new ListNode(data);
+            //step 3 insert in between
             temp -> next = prev -> next;
             prev -> next = temp;
+            //step 3 move to the next node
             prev = curr;
             curr = curr -> next;
         }
+        
         return head;
     }
 };
