@@ -36,7 +36,7 @@ public:
             //step 3 insert in between
             temp -> next = prev -> next;
             prev -> next = temp;
-            //step 3 move to the next node
+            //step 4 move to the next node
             prev = curr;
             curr = curr -> next;
         }
