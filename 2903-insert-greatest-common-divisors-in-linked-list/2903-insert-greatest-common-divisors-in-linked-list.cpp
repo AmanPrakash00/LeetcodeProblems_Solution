@@ -12,14 +12,13 @@ class Solution {
 public:
 
     int commonDivisor(int num1 ,int num2){
-        int ans = 1;
         int mini = min(num1,num2);
-        for(int i = 1 ;i<= mini;i++ ){
+        for(int i = mini ;i>=1;i-- ){
            if(num1%i == 0 && num2%i == 0){
-               ans = i;
+               return i;
            }
        }
-       return ans;
+       return 1;
     }
 
     
