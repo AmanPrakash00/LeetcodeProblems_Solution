@@ -13,7 +13,7 @@ public:
         vector<int> ans;
         ans.push_back(pref[0]);
         for(int i = 1;i<pref.size();i++){
-            // int data = ele(ans,pref[i]);
+            // int data = ele(ans,pref[i]); // approach 1 TLE
             ans.push_back(pref[i-1]^pref[i]);
         }
         return ans;
