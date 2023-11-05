@@ -14,8 +14,9 @@ public:
                 continue;
             }else{
                 if(flag == true && str.length() != 0){
-                    output.insert(0,str);
-                    output.insert(0," ");
+                    // output.insert(0,str);
+                    // output.insert(0," ");
+                    output = " " + str + output;
                     str = "";
                 }
                 str.push_back(s[i]);
