@@ -35,10 +35,31 @@ public:
         dp[n] = ans;
         return dp[n];
     }
+
+    int bottomup(int n){
+        vector<int> dp(n+1,0);
+        //base case
+        dp[0] = 1;
+        for(int i=1;i<=n;i++){
+            int ans = INT_MAX;
+            int end = sqrt(i);
+            for(int j = 1;j<=end;j++){
+                int square = j*j;
+                int numofPerfect = 1 + dp[i-square];
+                if(numofPerfect<ans){
+                    ans = numofPerfect;
+                }
+            }
+            dp[i] = ans;
+        }
+        return dp[n];
+    }
     int numSquares(int n) {
         // return recSolve(n)-1;
 
-        vector<int> dp(n+1,INT_MAX);
-        return topdown(n,dp)-1;
+        // vector<int> dp(n+1,INT_MAX);
+        // return topdown(n,dp)-1;
+
+        return bottomup(n)-1;
     }
 };
