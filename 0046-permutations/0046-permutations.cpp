@@ -12,16 +12,21 @@ public:
 
         for(int j = i;j<nums.size();j++){
             swap(nums[i],nums[j]);
-            // ans.push_back(nums[i]);
             permutations(nums,i+1,ans);
             //backtrack
-            // ans.pop_back();
             swap(nums[i],nums[j]);
         }
     }
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>> ans;
-        permutations(nums,0,ans);
+        // vector<vector<int>> ans;
+        // permutations(nums,0,ans);
+        // return ans;
+
+        vector<vector<int>>ans;
+        sort(nums.begin(),nums.end());
+        do{
+             ans.push_back(nums);
+        } while(next_permutation(nums.begin(),nums.end()));
         return ans;
     }
 };
