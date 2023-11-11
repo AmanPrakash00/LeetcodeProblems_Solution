@@ -1,7 +1,8 @@
 class Solution {
 public:
 
-//aproach 1 : T.
+//aproach 1 
+/*
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
         while(k>n){
@@ -19,5 +20,25 @@ public:
         for(int i = 0;i<n;i++){
             nums[i] = helper[i];
         }
+        delete helper;
+    }
+*/
+    void reverseArray(vector<int>&nums,int i ,int j){
+
+        while(i<j){
+            swap(nums[i],nums[j]);
+            i++;
+            j--;
+        }
+    }
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        while(k>n){
+            k = k - n;
+        }
+        reverseArray(nums,n-k,n-1);
+        reverseArray(nums,0,n-k-1);
+        reverseArray(nums,0,n-1);
+
     }
 };
