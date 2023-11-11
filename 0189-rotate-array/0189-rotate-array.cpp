@@ -33,9 +33,7 @@ public:
     }
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
-        while(k>n){
-            k = k - n;
-        }
+        k = k % nums.size();
         reverseArray(nums,n-k,n-1);
         reverseArray(nums,0,n-k-1);
         reverseArray(nums,0,n-1);
