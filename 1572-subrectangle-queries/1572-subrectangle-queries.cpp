@@ -1,6 +1,7 @@
 class SubrectangleQueries {
-public:
+    private:
     vector<vector<int>> v;
+    public:
     SubrectangleQueries(vector<vector<int>>& rectangle) {
         v = rectangle;
     }
