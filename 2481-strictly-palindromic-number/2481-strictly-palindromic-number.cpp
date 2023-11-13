@@ -1,5 +1,7 @@
 class Solution {
 public:
+
+/* approach 1
     string findString(int n,int b){
         string str = "";
         while(n!=0){
@@ -32,5 +34,9 @@ public:
         }
         return true;
         
+    }
+*/
+    bool isStrictlyPalindromic(int n) {
+        return false;
     }
 };
